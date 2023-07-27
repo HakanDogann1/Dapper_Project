@@ -1,0 +1,35 @@
+﻿@model ResultCategoryViewModel
+@{
+    Layout = null;
+}
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+<div class="container">
+    <br />
+    <br />
+    <form method="post">
+        <input type="hidden" asp-for="CategoryID"/>
+        <label>Kategori Adı</label>
+        <input type="text" class="form-control" asp-for="CategoryName" />
+        <br />
+        @if (Model.CategoryStatus == true)
+        {
+            <input type="radio" checked name="CategoryStatus" id="x"/>
+
+            <span>Aktif</span>
+            <input type="radio" name="CategoryStatus" id="x" />
+
+            <span>Pasif</span>
+        }
+        else
+        {
+            <input type="radio" class="form-control" name="CategoryStatus" id="x" />
+
+            <span>Pasif</span>
+            <input type="radio" class="form-control" checked name="CategoryStatus" id="x" />
+
+            <span>Pasif</span>
+        }
+        <button class="btn btn-info">Kaydet</button>
+    </form>
+
+</div>
